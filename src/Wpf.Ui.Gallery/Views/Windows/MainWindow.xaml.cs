@@ -27,6 +27,11 @@ public partial class MainWindow : IWindow
 
         InitializeComponent();
 
+        if (NotifyIcon.Menu != null)
+        {
+            NotifyIcon.Menu.DataContext = this;
+        }
+
         snackbarService.SetSnackbarPresenter(SnackbarPresenter);
         navigationService.SetNavigationControl(NavigationView);
         contentDialogService.SetDialogHost(RootContentDialog);
